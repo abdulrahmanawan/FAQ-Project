@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ !....</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .heading {
+            text-align: center;
+            padding: 15px 0px;
+            font-size: 30px;
+        }
+
+        .faqMid {
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px;
+            padding-bottom: 20px;
+        }
+
+        .faqItems {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .faqItems h3 {
+            padding: 15px;
+            background-color: yellowgreen;
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .faqItems h3 span {
+            position: absolute;
+            right: 10px;
+        }
+
+        .faqItems p {
+            font-size: 18px;
+            line-height: 30px;
+            padding: 10px;
+            display: none;
+        }
+
+        .showAns {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Frequently Asked Questions</h1>
+    <div class="faqMid">
+        <div class="faqItems">
+            <h3>What is HTML?<span>+</span></h3>
+            <p>HTML (HyperText Markup Language) is the standard markup language used to create the structure and content of a web page (e.g., headings, paragraphs, images).
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is CSS?<span>+</span></h3>
+            <p>CSS (Cascading Style Sheets) controls the visual appearance of a website. It handles colors, fonts, layouts, and spacing.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is JavaScript?<span>+</span></h3>
+            <p>JavaScript is a programming language that adds interactivity to a website. It handles dynamic elements like pop-ups, animations, and data updates without reloading the page.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is an API?<span>+</span></h3>
+            <p>API stands for Application Programming Interface. It allows different software systems to communicate with each other, such as a website fetching weather data from a remote server.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is the difference between Frontend and Backend?<span>+</span></h3>
+            <p>Frontend is what users see and interact with (the "client-side"). Backend is the logic, database, and server interactions that happen behind the scenes (the "server-side").
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is "Full Stack" development?<span>+</span></h3>
+            <p>A Full Stack developer works on both the frontend (user interface) and the backend (server and database) of an application.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is a responsive website?<span>+</span></h3>
+            <p>It is a website design that automatically adjusts its layout and content to look good on all devices, from desktops to smartphones.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is a Framework?<span>+</span></h3>
+            <p>A framework is a pre-written collection of code that provides a structure for building applications faster (e.g., React for frontend, Django for backend).
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is Git?<span>+</span></h3>
+            <p>Git is a version control system that tracks changes in your code history, allowing you to collaborate with others and revert to previous versions if something breaks.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is a CMS?<span>+</span></h3>
+            <p>A CMS (Content Management System) like WordPress allows users to create and manage website content without needing to write code manually.
+            </p>
+        </div>
+        <div class="faqItems">
+            <h3>What is Hosting?<span>+</span></h3>
+            <p>Hosting is a service that stores your website's files on a server connected to the internet, making your site accessible to users worldwide.
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    let allQuestion = document.querySelectorAll(".faqItems h3")
+    allQuestion.forEach((item, currentIndex) => {
+
+        
+        item.addEventListener("click", () => {
+
+            allQuestion.forEach((heading,i)=>{
+                if(currentIndex!=i){
+                    heading.lastElementChild.innerHTML="+"
+                    heading.nextElementSibling.classList.remove("showAns")
+                }
+            })
+
+            
+            
+            if (item.lastElementChild.innerHTML == "+") {
+                item.lastElementChild.innerHTML = "-"
+            }
+            else {
+                item.lastElementChild.innerHTML = "+"
+            }
+            item.nextElementSibling.classList.toggle("showAns")
+        })
+
+    })
+
+
+</script>
+
+</html>
